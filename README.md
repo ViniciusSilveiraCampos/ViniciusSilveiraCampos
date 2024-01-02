@@ -4,11 +4,6 @@
 - 🐍 Python como principal linguagem 
 - 🤖 Estudando analise de dados e redes neurais. 
 
-</div>
-  <a href="https://github.com/ViniciusSilveiraCampos">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=ViniciusSilveiraCampos&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
-
-
 ## 
 <div style="display: inline_block"><br>
     <img align="left"  height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
