@@ -1,6 +1,6 @@
 ## 𝐁𝐞𝐦 𝐯𝐢𝐧𝐝𝐨.🦋
 
-Meu nome é Vinícius Silveira Campos. Sou estudante de Ciência da computação na Faculdades Integradas de Bauru. 
+Estudante de Ciência da Computação na Faculdades Integradas de Bauru (FIB), aos 19 anos, sigo minha paixão por Ciência de Dados e Inteligência Artificial com Redes Neurais.
 
 - 🐍 `Python como principal linguagem.`
 - 🤖 `Analise de dados e redes neurais. `
