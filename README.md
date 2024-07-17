@@ -1,18 +1,21 @@
 ## 𝐁𝐞𝐦 𝐯𝐢𝐧𝐝𝐨!
 
-
-<div style="display: inline_block"><br>
-  <img align="center" alt="Python" height="50" width="45" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
-  <img align="center" alt="PyTorch"  src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white">
-  <img align="center" alt="Pandas"  src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white">
-  <img align="center" alt="MySQL"  src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white">
-</div>
-
-Estudante de Ciência da Computação na Faculdades Integradas de Bauru (FIB), aos 19 anos, sigo minha paixão por Ciência de Dados e Inteligência Artificial com Redes Neurais.
+Estudante de Ciência da Computação. Sigo minha paixão por Ciência de Dados e Inteligência Artificial com Redes Neurais.
 
 - 🐍 `Python como principal linguagem.`
 - 🤖 `Analise de dados e redes neurais. `
 
+
+<div style="display: inline_block"><br>
+  <img align="center" alt="Python" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"> 
+  <img align="center" alt="Pytorch" height="30" width="40"src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg">
+  <img align="center" alt="MySQL" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg">
+  <img align="center" alt="Pandas" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg">
+  <img align="center" alt="CSS" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg">
+  <img align="center" alt="HTML" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg">
+
+
+</div>
 
 #
 <div>
