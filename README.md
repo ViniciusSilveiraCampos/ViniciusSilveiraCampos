@@ -1,6 +1,8 @@
 # Wᴇʟᴄᴏᴍᴇ! ☕📖💻
 
-Hi, I'm 19 years old and a backend developer from Brazil. I'm currently studying for a bachelor's degree in Computer Science. In this current journey, I'm pursuing my passion for data science and artificial intelligence with neural networks.
+I'm 19 years old and a backend developer from Brazil, currently pursuing a bachelor's degree in Computer Science. I have a strong passion for data science and artificial intelligence, particularly in the realm of neural networks. As I continue to advance in my studies, I'm eager to start applying my skills in a professional environment.
+
+I'm actively seeking opportunities for an internship or trainee position as a backend developer. 💼
 
 - 📨 Contact me; vinicius.silveira.campos@gmail.com
 - 💾 Languages ​​and tools;
