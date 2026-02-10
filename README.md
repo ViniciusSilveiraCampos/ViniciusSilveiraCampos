@@ -1,8 +1,8 @@
 # Wᴇʟᴄᴏᴍᴇ! ☕📖💻
 
-I am a generative AI engineer currently working at the technology company Aleon. I am currently majoring in Computer Science. Passionate about knowledge, every day learning more about the world of technology.
+Data Engineer and Software Engineer with experience in designing, building, and maintaining scalable data platforms and cloud-native systems on AWS. Currently working at Aleon as a Data Engineer and pursuing a Computer Science degree at Faculdades Integradas de Bauru.
 
-Currently developing my software development skills and exploring more and more the area of artificial intelligence.
+Strong background in software development and artificial intelligence, with a focus on reliability, automation, and performance.
 
 - 📨 Contact me; vinicius.silveira.campos@gmail.com
 - 💾 Languages ​​and tools;

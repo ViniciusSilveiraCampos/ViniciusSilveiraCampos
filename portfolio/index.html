@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinicius Silveira Campos — Software Engineer | Data Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%23fff'/%3E%3Ctext x='50' y='68' font-family='Inter,Helvetica,sans-serif' font-size='58' font-weight='700' fill='%230a0a0a' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", "Helvetica", sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1a1a1a;
+            z-index: 100;
+            padding: 0 2rem;
+        }
+
+        nav .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 56px;
+        }
+
+        nav .logo {
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: -0.02em;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #666;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.3s;
+        }
+
+        nav .nav-links a:hover {
+            color: #fff;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 1.5px;
+            background: #ccc;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* ── Sections Base ── */
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #666;
+            margin-bottom: 2.5rem;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: #1a1a1a;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        /* ── Hero ── */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 56px;
+        }
+
+        #hero .fade-in {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* ── ASCII Art ── */
+        .ascii-art {
+            flex-shrink: 0;
+            width: 580px;
+            height: 720px;
+            overflow: hidden;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 9px;
+            line-height: 9.5px;
+            color: #444;
+            white-space: pre;
+            user-select: none;
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .ascii-art span {
+            display: inline-block;
+            will-change: transform;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        #hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        #hero .tagline {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 300;
+            color: #777;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-links a {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #ccc;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+            padding-bottom: 2px;
+            transition: border-color 0.3s;
+        }
+
+        .hero-links a:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        /* ── About ── */
+        #about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #bbb;
+            max-width: 680px;
+            font-weight: 300;
+        }
+
+        .about-tech-intro {
+            font-size: 0.95rem;
+            color: #888;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .tech-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(160px, 260px));
+            gap: 0.4rem 2rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tech-list li {
+            font-size: 0.88rem;
+            color: #999;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.9;
+        }
+
+        .tech-list li::before {
+            content: "\25B8";
+            position: absolute;
+            left: 0;
+            color: #444;
+            font-size: 0.7rem;
+        }
+
+        /* ── Experience (tabbed) ── */
+        .exp-container {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 0;
+            min-height: 320px;
+        }
+
+        .exp-tabs {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #1a1a1a;
+        }
+
+        .exp-tab {
+            background: none;
+            border: none;
+            border-left: 2px solid transparent;
+            padding: 0.9rem 1.25rem;
+            font-family: "Inter", "Helvetica", sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #555;
+            text-align: left;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: all 0.25s;
+        }
+
+        .exp-tab:hover {
+            color: #ccc;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .exp-tab.active {
+            color: #fff;
+            border-left-color: #fff;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .exp-panels {
+            padding-left: 2.5rem;
+        }
+
+        .exp-panel {
+            display: none;
+        }
+
+        .exp-panel.active {
+            display: block;
+            animation: fadePanel 0.35s ease-out;
+        }
+
+        @keyframes fadePanel {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .exp-panel .role-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin-bottom: 0.2rem;
+        }
+
+        .exp-panel .role-title .company-highlight {
+            color: #fff;
+            margin-left: 0.75rem;
+        }
+
+        .exp-panel .role-date {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-panel .role-date .current-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid #333;
+            color: #ccc;
+            font-size: 0.68rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 2px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .exp-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exp-panel li {
+            font-size: 0.88rem;
+            color: #999;
+            line-height: 1.75;
+            padding-left: 1.25rem;
+            position: relative;
+            margin-bottom: 0.6rem;
+        }
+
+        .exp-panel li::before {
+            content: "\25B8";
+            position: absolute;
+            left: 0;
+            color: #444;
+            font-size: 0.7rem;
+        }
+
+        /* ── Projects ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            border: 1px solid #1a1a1a;
+            padding: 2rem;
+            transition: border-color 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: #fff;
+        }
+
+        .project-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0;
+            color: #fff;
+        }
+
+        .project-card-header .github-link {
+            color: #555;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-card-header .github-link:hover {
+            color: #fff;
+        }
+
+        .project-card-header .github-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .project-card .project-sub {
+            font-size: 0.78rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .project-card .tech {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .project-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-card li {
+            font-size: 0.85rem;
+            color: #999;
+            line-height: 1.7;
+            padding-left: 1rem;
+            position: relative;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-card li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.65em;
+            width: 4px;
+            height: 4px;
+            background: #444;
+            border-radius: 50%;
+        }
+
+        /* ── Education ── */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .education-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #e0e0e0;
+        }
+
+        .education-item .institution {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .education-item .date {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ── Footer ── */
+        footer {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        footer .footer-copy {
+            font-size: 0.78rem;
+            color: #888;
+        }
+
+        footer .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        footer .footer-links a {
+            font-size: 0.8rem;
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* ── Fade-in Animation ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .ascii-art {
+                display: none;
+            }
+
+            #hero .fade-in {
+                display: block;
+            }
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            nav .nav-links {
+                display: none;
+                position: absolute;
+                top: 56px;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid #1a1a1a;
+            }
+
+            nav .nav-links.open {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .exp-container {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .exp-tabs {
+                flex-direction: row;
+                border-right: none;
+                border-bottom: 1px solid #1a1a1a;
+                overflow-x: auto;
+            }
+
+            .exp-tab {
+                border-left: none;
+                border-bottom: 2px solid transparent;
+                white-space: nowrap;
+                padding: 0.75rem 1rem;
+                font-size: 0.75rem;
+            }
+
+            .exp-tab.active {
+                border-left-color: transparent;
+                border-bottom-color: #fff;
+            }
+
+            .exp-panels {
+                padding-left: 0;
+                padding-top: 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-item {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#hero" class="logo">VSC</a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="fade-in">
+            <div class="ascii-art" id="ascii-art"></div>
+            <div class="hero-text">
+                <h1>Vinicius<br>Silveira Campos</h1>
+                <p class="tagline">Software Engineer (Backend) & Data Engineer building scalable cloud-native systems and data platforms on AWS.</p>
+                <div class="hero-links">
+                    <a href="mailto:vinicius.silveira.campos@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/vinicius-silveira-campos/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/ViniciusSilveiraCampos" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- About -->
+    <section id="about">
+        <div class="fade-in">
+            <p class="section-title">About</p>
+            <p>Data Engineer and Software Engineer with experience in designing, building, and maintaining scalable data platforms and cloud-native systems on AWS. Strong background in software development and artificial intelligence, with a focus on reliability, automation, and performance.</p>
+            <p class="about-tech-intro">Here are some technologies I have been working with:</p>
+            <ul class="tech-list">
+                <li>Python</li>
+                <li>SQL</li>
+                <li>AWS</li>
+                <li>Terraform / Terragrunt</li>
+                <li>LangChain</li>
+                <li>FastAPI</li>
+                <li>Docker</li>
+                <li>SQLAlchemy</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="fade-in">
+            <p class="section-title">/ experience</p>
+            <div class="exp-container">
+                <div class="exp-tabs">
+                    <button class="exp-tab active" data-tab="0">Aleon (DE)</button>
+                    <button class="exp-tab" data-tab="1">Aleon (AI)</button>
+                    <button class="exp-tab" data-tab="2">IPSENSE</button>
+                </div>
+                <div class="exp-panels">
+
+                    <div class="exp-panel active" data-panel="0">
+                        <p class="role-title">Data Engineer <span class="company-highlight">@ Aleon</span></p>
+                        <p class="role-date">Aug 2025 — Present <span class="current-badge">current</span></p>
+                        <ul>
+                            <li>Restructured and modularized cloud infrastructure using Terragrunt, improving repository organization and maintainability.</li>
+                            <li>Implemented and standardized CI pipelines with code quality tools such as Black, Ruff, terraform fmt, and TFLint.</li>
+                            <li>Built data extraction pipelines integrating Google BigQuery (GCP) with AWS services for cross-cloud data ingestion.</li>
+                            <li>Designed and developed ETL workflows to ingest, transform, and load data into AWS-based data platforms.</li>
+                            <li>Supported infrastructure reliability and automation efforts across data and backend systems.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-panel" data-panel="1">
+                        <p class="role-title">Gen AI Engineer <span class="company-highlight">@ Aleon</span></p>
+                        <p class="role-date">Feb 2025 — Aug 2025</p>
+                        <ul>
+                            <li>Developed generative AI applications using AWS Bedrock and LangChain, focusing on scalable and production-ready AI solutions.</li>
+                            <li>Built and orchestrated pipelines for model inference and fine-tuning using AWS ECS and EC2.</li>
+                            <li>Integrated and automated AI workflows through APIs using AWS API Gateway and LangSmith.</li>
+                            <li>Managed and scaled cloud infrastructure using Terragrunt with Infrastructure as Code best practices.</li>
+                            <li>Optimized data storage and retrieval layers using SQLAlchemy to support AI workloads.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-panel" data-panel="2">
+                        <p class="role-title">Data Engineer Intern <span class="company-highlight">@ IPSENSE</span></p>
+                        <p class="role-date">Sep 2024 — Mar 2025</p>
+                        <ul>
+                            <li>Designed and optimized scalable data pipelines using AWS Glue for reliable batch data processing.</li>
+                            <li>Developed serverless ETL workflows with AWS Lambda and Step Functions to automate processes.</li>
+                            <li>Optimized Step Functions workflows, reducing execution time from 15h to 5h (~67% reduction).</li>
+                            <li>Created efficient SQL queries in Amazon Athena for data analysis, transformation, and quality validation.</li>
+                            <li>Implemented Infrastructure as Code using Terraform to automate AWS resource provisioning.</li>
+                            <li>Monitored and improved data pipeline performance, reliability, and observability across data flows.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="fade-in">
+            <p class="section-title">Projects</p>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <h3>Botanica API</h3>
+                        <a href="https://github.com/ViniciusSilveiraCampos/botanica-api" target="_blank" rel="noopener" class="github-link" aria-label="View on GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                    <p class="project-sub">Faculdades Integradas de Bauru &middot; Jul 2024 — Present</p>
+                    <p class="tech">Python &middot; FastAPI &middot; Pydantic &middot; SQLAlchemy</p>
+                    <ul>
+                        <li>RESTful API using FastAPI to manage a plant database with full CRUD functionality and schema validation.</li>
+                        <li>Data validation and serialization with Pydantic for data consistency and API reliability.</li>
+                        <li>Automated testing with Pytest and TDD to improve code quality and maintainability.</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <h3>Mentionary Bot</h3>
+                        <a href="https://github.com/ViniciusSilveiraCampos/mentionary-bot" target="_blank" rel="noopener" class="github-link" aria-label="View on GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                    <p class="project-sub">Personal Project &middot; 2025</p>
+                    <p class="tech">Python &middot; LangChain &middot; Gemini AI &middot; Discord.py</p>
+                    <ul>
+                        <li>Discord bot powered by Gemini AI via LangChain, designed to interact with server members.</li>
+                        <li>Responds to mentions, assists with questions, and brings intelligent conversation to Discord servers.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="fade-in">
+            <p class="section-title">Education</p>
+            <div class="education-item">
+                <div>
+                    <h3>Computer Science</h3>
+                    <p class="institution">Faculdades Integradas de Bauru — Bauru, SP</p>
+                </div>
+                <p class="date">Mar 2024 — Dec 2027</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-copy">&copy; 2026 Vinicius Silveira Campos</p>
+        <div class="footer-links">
+            <a href="mailto:vinicius.silveira.campos@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/vinicius-silveira-campos/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/ViniciusSilveiraCampos" target="_blank" rel="noopener">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('open');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('open');
+            });
+        });
+
+        // Experience tabs
+        document.querySelectorAll('.exp-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const id = tab.dataset.tab;
+                document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.querySelector(`.exp-panel[data-panel="${id}"]`).classList.add('active');
+            });
+        });
+
+        // ASCII Art Interactive Portrait
+        (function() {
+            const ASCII = `=====-=-----:.          .
+  -=----=----. .   :
+. .------------.:--:--:                                                                            .
+:---------------:-----                                                                       . .....
+---=-----------------:.       ..   .                                               .   .  ..........:
+-=------:------------         ....::::::.:.                                     .  ... .......:.:...
+------------:-----:--:         :.-:::-:-:::::::::                 .          . ......:.:.:...... ...
+-----------:----:-----          ::::::--:::::::::::::::.            :=#       ...:.:..::.::........
+----------:::-::::--:-         ::::::::::::::::::::::-:::::-:..     .:+      ...:...:.:......... . :
+---:-----::::-::-::-::          ::::::::::::.::::::::::::::::::::--  .      ................:..:=+++
+------:-:-:---::-:-::          .:::::::::::::::::::::::::::::-:::-.    ===+-:.....:....:.:..:=+++*++
+----:---:::::::-::::.          .:::::::::-%%#+%##=:-:::::::::::::::    ===++++++++-:.::.:+++++++++++
+----:-:::-:::-:::::-          ..::--=%%%%%%%#%%%%%#%%%#+#%::::::::-    .++=++++++++*++*****+++++++++
+--:-:::::::::::::::-          ::##%%%%%%%%%%%%%%%%%%%#%%*%#+--:::-:    ..-++=++*+++********+++++++++
+:-:-::-::-:::::::::.        = =*%%%%%%%%%%%%%%%%%%%%%%%#%%%###--:::    ..==:::::=++*+******+++++++++
+:--::::::::::::::::         :+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##%*:    ===++=+++-:+++*+**+++++++++++
+--:::::::::::::::::       :%*%%%%%%%%%%%%%%%%%%%%%#%%%%%##%%#%%%%#::   :-+=+++++-:+++**+*+++++++=+++
+--:::-:::::-::::::.       #%#%%%%%%%%%%%%%%%%%%%%%#%%%%%%%%%%%#%%%#*-  =====++++=:+++++**++*++++=+=+
+-:-::::.::::::::::::     ..%%%%%%%%%%%%%%%#%%%%%#%%%%%%%%%%%%%%%%%%+*# -==++++++=:+*++++*++=++++=+==
+--::-::::::::::::::...     #%%%%%%%%%%%%%%%%#%%%%%#%%%%%%%%%%%%%%#%##*..-==+=+++-.++++++++++++++=+==
+:-:::::::::::::::.:.:..   #*%%%%%%%%%%%##%%#%#%%##+**%%%%%%%%%%%%%%##%  ====++++=.++++*++++++++=====
+:::::::::::::::::.:..     =%#%%%%#%%%#*#%###*++=--+:-*%%%%%%%%%%%%%#*-.:=====+===:++++++++++=====+==
+:::::::::::::::::::          %%%%%%##*+==#%%#+=#**+%==*%%%%%%%%%%%%#%#.--====++==:++++*++++++=++++=+
+:::::::::::::.::::            =%%#%%%#=:-=#%##*++=-:-::*#*=#%%%%%%###: - -====+==.++++++++++===+==+=
+-:::::::::::.:::.::             %%%##*=--=+**++=--:....-#:--**%%%%##:.   :=======.+++++++++++++=+===
+::::::.:..:::..:::..           = +%##+=---=+++==-:   ..::----+%%%%#%-   .-=======.++++++++==++======
+:::::::.:..:::...::.:            *-*#=:---=++=--:.   ..::#:.:%%%%#%+.   ::====+==.+++=++++==+====+==
+::::.::::::.:.....:..              #*=::*-+++=-:..   ....: .%%%%##%=    . -=====-.++=++=++=+=+======
+:::::::..:.........:             ..:*##*+++=-::..  ..  ....-%%%###%-     --===++=.==+++++++=========
+::::.:..:...:::.....              ..###***-:::::... ....:. +%%%%#%#      --=====-:+=+++++++=====++==
+:::::.:......:.:....                =#%#*+*+.:-:...:.:::.  =%%##%#       ::======.==+++++++++=+=====
+::::::::...:.......                  +##*=--:.:::.:::--:.  .%#*+         ::-=====:+=++++++++========
+::..:::.............                  +##*+=--:::::---::...: ::          -:-===+=:+++++++++=+=======
+::.::........... ....                  ###*+=-::--==---::.-    %  .      .-======.+=+++++++=========
+::.......... .......                 .  ##**++=++++=-:---      %%%%#* .  :       .=+++++++++========
+:::.................                     =%%####*+=-:-#+       %%%%%%:  .          ++++++++=+=======
+:::.................             .   .##%%=:####*===#%        .%%%%%::.::.  .       ++++++++=+====+=
+::..:................           .##%%%%%%%==+ ####%%=        :%%%%%%::-= .::..       ++++++==++=====
+:::::................        .-%%%%%%%%%%%====- : =.        :*%%%%%--==---:-  .        :++++=+======
+:..::.. :. ........      ::   =%%%%%%%%%%%====++   .=**    .=%%%%%=-:==-==- :::..         +++++=====
+                        :...  %%%%%%%%%%%%*==++:    ..-+%%%:%%%%%%========:-==.:::. .      +++======
+                       +=: .. %%%%%%%%%%%%%*-+*=    .:-%%%%%%%%%%%=++===+====+---...   +#    -==+===
+                      ===+. : %%%%%%%%%%%%%#***-.....-%%%%%%%%%%%%+=++++++++===-=%%%..          ++==
+                     :===+=:::#%%%%%%%%%%%%#***=::---=%%%%%%%%%%%%*+++**++++==+%%::-:.    ..      ==
+                     ==--=-+:::%%%%%%%%%%%%#**++=-=++%%%%%%%%%%%%%+*+******+=+%#----:.   ..
+                    :==---=:=-:%%%%%%%%%%%%%+***+**=%%%%%%%%%%%%%%***+*#***+#%%-=----:  ..
+                    =:=-=--+--+%%%%%%%%%%%%%*+++++=+%%%%%%%%%%%%%%#*****#+*+*%=----::::::....
+                    =+:======-*=%%%%%%%%%%%%*++====%%%%%%%%%%%%%%%%****++=**+=----:.:--:::.
+..                 -:-==+--=+=*=%%%%%%%%%%%%#+++==#%%%%%%%%%%%%%%%%**#=*:+-#+++==---===. .
+.                  ===-:-====+*#%%%%%%%%%%%%#**+++%%%%%%%%%%%%%%%%%%#*=*:*:+-:++==+-=--.
+.                   ++++*#++=+*#%%%%%%%%%%%%####+%%%%%%%%%%%%%%%%%%%%=-*:+.=  .+===-:.
+                    -=++**+*##*##%%%%%%%%%%%#####%%%%%%%%%%%%%%%%%%%%%%+ - .   *+--:.
+                    =+=+++***####%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%%#  .  :--.
+                    =++******###*%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%#%#####---.
+                    -+%%%%%%%%%%%%%%%%%%%%%%%##%%%%%%%%%%%%%%%%%%%%%%%%%###%----:.
+                    :%%%%%%%%%%%%%%%%%%%%%%%%%#%%%%%%%%%%%%%%%%%%%%%%%%%#%=-----:
+                 .+*%%%#+++++*****%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%+-----.
+    .          =+++*%+++==++++++*##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%----=-:
+           .-+++***#==++++++++++**#**%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%------:.
+         .=*+++***#=++++*+++++++++**%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%* ::---::.--
+ .. ...-+********#*++==++++++++++***%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%---  :::. ..-.
+....:=+++**+*****##++**+==+++==++++*%%%%%%%%%%%%%%%%%%%%%%%%%%%%-==-==--
+.:-=*+**+*******###+++++++++===+++*#%%%%%%%%%%%%%%%%%%%%%%%%%%%---=:-===--.
+=+************#####+++***++++====+*#%%%%%%%%%%%%%%%%%%%%%%%%%%*--=--.-====-.
+**************#####+*-========+=+=*+#%%%%%%%%%%%%%%%%%%%%%%%=-=::--=  .====-.
+**************####+======+++++++++##%%%%%%%%%%%%%%%%%%%%%%=--==- -=-   .:===-
+**********#*#####*+=+=++=+++++****%%%%%%%%%%%%%%%%%%%%%%--------  ---   ..==:. .
+*#**********####*++=+++***********#%%%%%%%%%%%%%%%%%%%-------===.  --    .==:.`;
+
+            const container = document.getElementById('ascii-art');
+            if (!container) return;
+
+            const lines = ASCII.split('\n');
+            const spans = [];
+            const positions = [];
+
+            lines.forEach((line, lineIdx) => {
+                for (let i = 0; i < line.length; i++) {
+                    const ch = line[i];
+                    const span = document.createElement('span');
+                    span.textContent = ch === ' ' ? '\u00A0' : ch;
+                    // Brighter color for denser characters
+                    if ('#%@'.includes(ch)) span.style.color = '#666';
+                    else if ('*+='.includes(ch)) span.style.color = '#555';
+                    else if ('-:'.includes(ch)) span.style.color = '#3a3a3a';
+                    container.appendChild(span);
+                    spans.push(span);
+                    positions.push({ x: i * 5.4, y: lineIdx * 9.5 });
+                }
+                container.appendChild(document.createTextNode('\n'));
+            });
+
+            const RADIUS = 50;
+            const RADIUS_SQ = RADIUS * RADIUS;
+            const STRENGTH = 25;
+            let rafId = null;
+            let mouseX = -1000, mouseY = -1000;
+
+            container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                mouseX = e.clientX - rect.left;
+                mouseY = e.clientY - rect.top;
+                if (!rafId) {
+                    rafId = requestAnimationFrame(updatePositions);
+                }
+            });
+
+            container.addEventListener('mouseleave', () => {
+                mouseX = -1000;
+                mouseY = -1000;
+                rafId = null;
+                for (let i = 0; i < spans.length; i++) {
+                    spans[i].style.transform = '';
+                }
+            });
+
+            function updatePositions() {
+                rafId = null;
+                for (let i = 0; i < spans.length; i++) {
+                    const pos = positions[i];
+                    const dx = pos.x - mouseX;
+                    const dy = pos.y - mouseY;
+                    const distSq = dx * dx + dy * dy;
+                    if (distSq < RADIUS_SQ && distSq > 0) {
+                        const dist = Math.sqrt(distSq);
+                        const force = (1 - dist / RADIUS) * STRENGTH;
+                        const tx = (dx / dist) * force;
+                        const ty = (dy / dist) * force;
+                        spans[i].style.transform = `translate(${tx}px,${ty}px)`;
+                    } else {
+                        spans[i].style.transform = '';
+                    }
+                }
+                if (mouseX > -999) {
+                    rafId = requestAnimationFrame(updatePositions);
+                }
+            }
+        })();
+    </script>
+
+</body>
+</html>
